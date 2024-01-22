@@ -1,0 +1,149 @@
+.form-container {
+  background-color: white;
+  padding: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  .form-body {
+    position: relative;
+    width: 500px;
+    .form-control {
+      &:not(:last-of-type) {
+        margin-bottom: 1rem;
+      }
+      label {
+        color: rgb(226, 125, 125);
+        font-size: 17px;
+      }
+      input {
+        width: 100%;
+        padding: 4px;
+        box-sizing: border-box;
+        margin-top: 5px;
+      }
+    }
+    .school-rooms {
+      background-color: rgba(219, 216, 216, 0.271);
+      padding: 12px;
+      .school-rooms-room {
+        background-color: rgba(205, 203, 203, 0.578);
+        padding: 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+        &:not(:last-of-type) {
+          margin-bottom: 10px;
+        }
+        .form-control {
+          label {
+            color: black;
+            font-size: 1rem;
+          }
+          input {
+            height: 23px;
+            outline: none;
+          }
+        }
+        .room-subjects {
+          margin-top: 1rem;
+          padding: 0 8px;
+          &-subject {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            &:not(:first-of-type) {
+              margin-top: 20px;
+            }
+            .form-control {
+              max-width: 35%;
+              margin: 0;
+              label {
+                color: black;
+                font-size: 15px;
+              }
+              input {
+                height: 23px;
+                width: 100%;
+                outline: none;
+              }
+            }
+            .delete-subject {
+              background-color: rgb(237, 109, 109);
+              color: white;
+              padding: 5px 10px;
+              border: none;
+              cursor: pointer;
+              -o-border-radius: 5px;
+              -webkit-border-radius: 5px;
+              -moz-border-radius: 5px;
+              -ms-border-radius: 5px;
+              border-radius: 5px;
+            }
+          }
+        }
+        .add-subject {
+          background-color: rgb(93, 93, 232);
+          color: white;
+          padding: 5px 12px;
+          border: none;
+          cursor: pointer;
+          margin: 20px 10px 0 0;
+          -o-border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          border-radius: 5px;
+        }
+        .delete-room {
+          background-color: rgb(237, 109, 109);
+          color: white;
+          padding: 5px 12px;
+          border: none;
+          cursor: pointer;
+          margin-top: 20px;
+          -o-border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          border-radius: 5px;
+        }
+      }
+    }
+    .add-btn {
+      background-color: rgb(93, 93, 232);
+      color: white;
+      padding: 6px 15px;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+      -o-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      border-radius: 5px;
+    }
+    .submit-btn {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      letter-spacing: 1px;
+      background-color: rgb(56, 141, 94);
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      padding: 6px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+      -o-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      border-radius: 5px;
+    }
+  }
+}
