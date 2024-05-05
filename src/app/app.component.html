@@ -1,54 +1,56 @@
-<div class="form-container">
-  <form class="form-body" [formGroup]="schoolForm">
-    <div class="form-control">
-      <label>School Name *</label>
-      <input type="text" placeholder="School Name" formControlName="schoolName">
-    </div>
-    <div class="form-control">
-      <label>School Students Count *</label>
-      <input type="text" placeholder="School Students Count" formControlName="schoolStudentsCount">
-    </div>
-    <!-- Start school rooms -->
-    <div class="school-rooms" formArrayName="schoolRooms" *ngIf="getSchoolRooms().controls.length">
-      <!-- Start room -->
-      <ng-container *ngFor="let room of getSchoolRooms().controls; let roomIndex = index">
-        <div class="school-rooms-room" [formGroupName]="roomIndex">
-          <div class="form-control">
-            <label>Class Number *</label>
-            <input type="text" placeholder="Room Number" formControlName="roomNumber">
-          </div>
-          <div class="form-control">
-            <label>Class Students Count *</label>
-            <input type="text" placeholder="Room Students Count" formControlName="roomStudentsCount">
-          </div>
-          <!-- Start Room Subjects -->
-          <div class="room-subjects" formArrayName="roomSubjects" *ngIf="getRoomSubjects(roomIndex).length">
-            <!-- Start Subject -->
-            <ng-container *ngFor="let subject of getRoomSubjects(roomIndex).controls; let subjectIndex = index">
-              <div class="room-subjects-subject" [formGroupName]="subjectIndex">
-                <div class="form-control">
-                  <label>Subject Name *</label>
-                  <input type="text" placeholder="Subject Name" formControlName="subjectName">
+<div class="main-content">
+  <div class="form-container">
+    <form class="form-body" [formGroup]="schoolForm">
+      <div class="form-control">
+        <label>School Name *</label>
+        <input type="text" placeholder="School Name" formControlName="schoolName">
+      </div>
+      <div class="form-control">
+        <label>School Students Count *</label>
+        <input type="text" placeholder="School Students Count" formControlName="schoolStudentsCount">
+      </div>
+      <!-- Start school rooms -->
+      <div class="school-rooms" formArrayName="schoolRooms" *ngIf="getSchoolRooms().controls.length">
+        <!-- Start room -->
+        <ng-container *ngFor="let room of getSchoolRooms().controls; let roomIndex = index">
+          <div class="school-rooms-room" [formGroupName]="roomIndex">
+            <div class="form-control">
+              <label>Class Number *</label>
+              <input type="text" placeholder="Room Number" formControlName="roomNumber">
+            </div>
+            <div class="form-control">
+              <label>Class Students Count *</label>
+              <input type="text" placeholder="Room Students Count" formControlName="roomStudentsCount">
+            </div>
+            <!-- Start Room Subjects -->
+            <div class="room-subjects" formArrayName="roomSubjects" *ngIf="getRoomSubjects(roomIndex).length">
+              <!-- Start Subject -->
+              <ng-container *ngFor="let subject of getRoomSubjects(roomIndex).controls; let subjectIndex = index">
+                <div class="room-subjects-subject" [formGroupName]="subjectIndex">
+                  <div class="form-control">
+                    <label>Subject Name *</label>
+                    <input type="text" placeholder="Subject Name" formControlName="subjectName">
+                  </div>
+                  <div class="form-control">
+                    <label>Subject Students Count *</label>
+                    <input type="text" placeholder="Subject Students Count" formControlName="subjectStudentsCount">
+                  </div>
+                  <button class="delete-subject" (click)="deleteRoomSubject(roomIndex, subjectIndex)"> Delete
+                    Subject</button>
                 </div>
-                <div class="form-control">
-                  <label>Subject Students Count *</label>
-                  <input type="text" placeholder="Subject Students Count" formControlName="subjectStudentsCount">
-                </div>
-                <button class="delete-subject" (click)="deleteRoomSubject(roomIndex, subjectIndex)"> Delete
-                  Subject</button>
-              </div>
-            </ng-container>
-            <!-- End Subject -->
+              </ng-container>
+              <!-- End Subject -->
+            </div>
+            <!-- End Room Subjects -->
+            <button class="add-subject" (click)="AddRoomSubject(roomIndex)"> Add Subject</button>
+            <button class="delete-room" (click)="deleteSchoolRoom(roomIndex)"> Delete Room</button>
           </div>
-          <!-- End Room Subjects -->
-          <button class="add-subject" (click)="AddRoomSubject(roomIndex)"> Add Subject</button>
-          <button class="delete-room" (click)="deleteSchoolRoom(roomIndex)"> Delete Room</button>
-        </div>
-      </ng-container>
-      <!-- End room -->
-    </div>
-    <!-- Ens school rooms -->
-    <button class="add-btn" (click)="addSchoolRoom()">Add Class Room</button>
-    <button class="submit-btn">Submit</button>
-  </form>
+        </ng-container>
+        <!-- End room -->
+      </div>
+      <!-- Ens school rooms -->
+      <button class="add-btn" (click)="addSchoolRoom()">Add Class Room</button>
+      <button class="submit-btn">Submit</button>
+    </form>
+  </div>
 </div>
